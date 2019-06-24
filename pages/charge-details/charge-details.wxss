@@ -1,0 +1,135 @@
+swiper {
+  height: 394rpx;
+}
+
+.detail-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 44rpx 24rpx 36rpx;
+}
+
+.detail-top-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.detail-top-left >text:first-child {
+  font-size: 28rpx;
+  color: #262626;
+  font-weight: bold;
+  flex: 1;
+}
+
+.detail-top-left >text:last-child {
+  font-size: 24rpx;
+  color: #9b9b9b;
+}
+
+.detail-top-left >text {
+  width: 555rpx;
+}
+
+.detail-top-left>text, .detail-top-left>view {
+  margin-bottom: 10rpx;
+}
+
+.detail-top-left view {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.detail-top-left view text {
+  font-size: 22rpx;
+  color: #9b9b9b;
+  border: 1px solid #d8d8d8;
+  padding: 2rpx 4rpx;
+  border-radius: 4rpx;
+  margin: 5rpx 10rpx 5rpx 0rpx;
+}
+
+.detail-top-right {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.detail-top-right image {
+  width: 76rpx;
+  height: 76rpx;
+}
+
+.detail-top-right text {
+  font-size: 28rpx;
+  color: #9b9b9b;
+}
+
+.detail-bottom {
+  padding: 0 36rpx;
+}
+
+.item {
+  border-top: 2rpx solid #efefef;
+  padding-bottom: 30rpx;
+  position: relative;
+}
+
+.item .look-more {
+  position: absolute;
+  top: 30rpx;
+  right: 0;
+
+  border-radius: 4px;
+  width: 114rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  text-align: center;
+  padding-top: 2rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.item image {
+  width: 88rpx;
+  height: 88rpx;
+  position: absolute;
+  margin: auto;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.item view {
+  display: flex;
+  align-items: center;
+  margin-top: 26rpx;
+}
+
+.item view text {
+  font-size: 24rpx;
+}
+
+.item view text:first-child {
+  color: #262626;
+  margin-right: 46rpx;
+  width: 96rpx;
+}
+
+.item view text:last-child {
+  color: #9b9b9b;
+}
+
+.item view text:last-child.money {
+  font-size: 40rpx;
+  color: #00c6ca;
+  font-weight: bold;
+}
+
+.item view text:last-child.money::after {
+  content: '元/度';
+  font-size: 24rpx;
+  color: #9b9b9b;
+  font-weight: normal;
+}

@@ -1,0 +1,63 @@
+.user-center {
+  width: 100%;
+  height: 100%;
+  background-color: #f9f9f9;
+}
+
+.up {
+  height: 180rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.user-head-picture {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin: 0 40rpx;
+}
+
+.user-tel {
+  font-size: 36rpx;
+  color: #262626;
+}
+
+.arrow-right {
+  display: flex;
+  align-items: center;
+  height: 50rpx;
+}
+
+.center >view {
+  height: 120rpx;
+  background: #fff;
+  padding: 0 40rpx;
+  position: relative;
+}
+
+.center >view::after {
+  position: absolute;
+  content: '';
+  height: 2rpx;
+  width: 670rpx;
+  background: #f9f9f9;
+  bottom: 0;
+}
+
+.user-money {
+  margin-right: 20rpx;
+}
+
+.return {
+  height: 120rpx;
+  background: #fff;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.text-style {
+  font-size: 34rpx;
+  color: #262626;
+}

@@ -1,0 +1,28 @@
+<wxs src="../../filters/filter.wxs" module="filter" />
+<view class='flex-center-center view-block'>
+  <view class='order-item' wx:for="{{listData}}" wx:key="{{item.index}}" bind:tap="handleGoToDetail" data-item="{{item}}" data-index="{{index}}">
+    <view class='flex-center-between'>
+      <text class='add-dot'>{{item.stationName}}</text>
+      <view>
+        <text>{{item.orderStatusText}}</text>
+        <image src='/assets/imgs/arrow.png' mode='aspectFit'></image>
+      </view>
+    </view>
+    <view>
+      <image src='./img/time.png' mode='aspectFit'></image>
+      <text>{{filter.timeFilter(item.startTime, 'MM月dd日 hh:mm:ss')}}</text>
+    </view>
+    <view>
+      <image src='./img/money.png' mode='aspectFit'></image>
+      <text>{{filter.moneyFilter(item.needPay)}}元</text>
+    </view>
+  </view>
+  <view wx:if="{{noData}}" class='flex-column-center-center'>
+    <image src='./img/no-data.png' class='no-data' style='height: 180rpx' mode='aspectFit'></image>
+    <text class='no-data-text'>暂无订单记录</text>
+  </view>
+  <view class="weui-loadmore" hidden="{{loadComplete || !loading}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+</view>

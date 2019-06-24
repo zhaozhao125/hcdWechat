@@ -1,0 +1,53 @@
+<wxs src="../../filters/filter.wxs" module="filter" />
+<view class='order'>
+  <view class='money'>
+    <text>合计</text>
+    <text>{{filter.moneyFilter(orderData.totalMoney)}}</text>
+  </view>
+  <text class='name'>{{orderData.stationName||'-'}}</text>
+
+  <view class='pay-detail'>
+    <view>
+      <text>电费</text>
+      <text>{{filter.moneyFilter(orderData.totalElecMoney)}}元</text>
+    </view>
+    <view>
+      <text>服务费</text>
+      <text>{{filter.moneyFilter(orderData.totalServiceMoney)}}元</text>
+    </view>
+    <view>
+      <text>站位费</text>
+      <text>{{filter.moneyFilter(orderData.parkingMoney)}}元</text>
+    </view>
+  </view>
+  <view class='coupon'>
+    <view class='coupon-top flex-center-between'>
+      <text>优惠券</text>
+      <view catchtap='jumpCoupon'>
+        <text wx:if='{{couponsName}}'>{{couponsName}}</text>
+        <text wx:elif='{{noUseCoupon}}'>不使用优惠券</text>
+        <text wx:elif='{{couponCount==0}}'>无可用</text>
+        <text wx:elif='{{couponCount}}' style='color: #ff4520;'>{{couponCount}}张可用</text>
+        <view class="weui-loading" wx:else></view>
+        <image src='/assets/imgs/arrow.png' mode='aspectFit'></image>
+      </view>
+    </view>
+    <text>优惠券，仅抵扣服务费，不减免其他费用</text>
+
+  </view>
+  <view class='pay-money flex-center-between' wx:for='{{orderData.payList}}' wx:for-item='item' wx:key='index'>
+    <view class='flex-center-center'>
+      <image src='./img/wallet-icon.png' mode='aspectFit'></image>
+      <text decode="true">{{item.payTypeName}}余额&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;余{{filter.moneyFilter(item.extra.walletMoney)}}元&nbsp;)</text>
+    </view>
+    <image src='./img/success-icon.png' mode='aspectFit' wx:if='{{item.status}}'></image>
+  </view>
+  <view class='pay-bottom flex-center-between'>
+    <view class='left-view'>
+      <text class='text-one'>合计</text>
+      <text class="need-pay {{orderData.discountAmount?'line':''}}">{{filter.moneyFilter(orderData.needPay)}}</text>
+      <text class='discount-amount' wx:if='{{orderData.discountAmount}}'>已优惠¥{{filter.moneyFilter(orderData.discountAmount)}}</text>
+    </view>
+    <text class='text-button flex-center-center button-bg' catchtap='clickPaying'>确认支付</text>
+  </view>
+</view>

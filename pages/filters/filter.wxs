@@ -1,0 +1,7 @@
+module.exports.intFilter = function(val) {
+  
+  if(isNaN(val) || val < 0){
+    return '-'
+  }
+  return Math.round(val)
+}

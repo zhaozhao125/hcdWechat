@@ -1,0 +1,6 @@
+var toFixed = function(val) {
+  return val.toFixed(2);
+}
+module.exports = {
+  toFixed: toFixed
+}

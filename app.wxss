@@ -1,0 +1,171 @@
+/**app.wxss**/
+@import './assets/wxss/cover-default.wxss';
+@import './assets/wxss/public-style.wxss';
+
+page {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: PingFangSC-Regular;
+}
+
+view {
+  box-sizing: border-box;
+}
+
+/* 添加地图内容边框 */
+
+.add-map-wrap-border {
+  border: 1px solid #f2f2f2;
+}
+
+text {
+  box-sizing: border-box;
+}
+
+image {
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* background: red; */
+}
+
+.return-home-icon {
+  position: absolute;
+  margin: auto;
+  top: 0；;
+}
+
+/*覆盖button默认样式  */
+
+.button-public {
+  background: #fff;
+}
+
+.button-public::after {
+  border: none;
+}
+
+.login-button {
+  height: 94rpx;
+  width: 90%;
+  line-height: 94rpx;
+  text-align: center;
+  background: #d8d8d8;
+  border-radius: 5px;
+  font-size: 36rpx;
+  color: #fff;
+  /* font-weight: bold; */
+}
+
+/*按钮样式覆盖  */
+
+.botton_class {
+  height: 94rpx;
+  width: 90%;
+  background: #d8d8d8;
+  color: #fff;
+}
+
+.botton_noborder::after {
+  border: none;
+}
+
+.botton_class_2 {
+  background: #f7f7f7;
+  border: 2rpx solid #3d3d3d;
+  border-radius: 4rpx;
+  font-size: 36rpx;
+  color: #3d3d3d;
+}
+
+.choice-icon {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  border: 2rpx solid #c0c0c0;
+}
+
+.add-dot {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+cover-view {
+  pointer-events: none;
+}
+
+cover-image {
+  pointer-events: none;
+}
+
+.public-fixed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.placeholder {
+  font-size: 34rpx;
+}
+
+.arrow::after {
+  display: inline-block;
+  transform: rotate(45deg);
+  border: 0.5vw solid #c7c7cc;
+  opacity: 0.8;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  content: '';
+  width: 15rpx;
+  height: 15rpx;
+}
+
+.button-hover {
+  color: #fff;
+}
+
+.add-dot {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.flex-column-center-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.no-data-image {
+  margin-top: 50rpx;
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.no-data-text {
+  color: #7c7c7c;
+  font-size: 28rpx;
+}
+.button-bg{
+    background-image: linear-gradient(-270deg, #1cdf98 0%, #00c6ca 100%);
+}

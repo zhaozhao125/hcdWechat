@@ -1,0 +1,20 @@
+<view class='login-page'>
+  <text class='top-tip'>验证码已发送至</text>
+  <view class='code-container'>
+    <view class='get-container public-fixed'>
+      <text class='get-tel'>{{tel||'-'}}</text>
+      <text wx:if='{{countTime}}' class='get-time'>({{countTime}}秒)</text>
+      <text class='send-code' wx:else bindtap='sendCode'>发送验证码</text>
+    </view>
+    <input class='code-input' placeholder-class='placeholder' bindinput='getCode' value='{{inputCode}}' maxlength='{{inputCodeLength}}' placeholder='请输入短信验证码' type='number' focus='{{inputFocus}}'></input>
+  </view>
+  <view class='invite-input' wx:if='{{newRegister}}'>
+    <input placeholder-class='placeholder' value='{{invitationCode}}' bindinput='getInvitationCode' placeholder='请输入邀请码  (非必填)'></input>
+  </view>
+  <!-- <button  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button> -->
+  <button open-type="{{inputCode.length===inputCodeLength?'getUserInfo':''}}" bindgetuserinfo="registerOkAndInfo" class="botton_class botton_noborder' {{inputCode.length===inputCodeLength?'button-bg':''}}">{{newRegister?'注册':'登录'}}</button>
+  <view class="protocol flex-center-center">
+    未注册用户，登录时自动注册，且代表您已同意《
+    <navigator url="/login/protocol/protocol" style='color: #00C6CA;'>用户协议</navigator>》
+  </view>
+</view>

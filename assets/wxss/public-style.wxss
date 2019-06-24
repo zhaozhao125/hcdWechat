@@ -1,0 +1,146 @@
+/* 全局公共样式 */
+
+/* 页面容器 */
+
+.container {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 纵向flex布局 */
+
+.flex-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 黑色渐变背景 */
+
+.dark-bg {
+  background: linear-gradient(180deg, #3d3d3d 0%, #181818 100%);
+  color: #fdd000;
+  border: 1px solid #3d3d3d;
+}
+
+/* 浅色背景 */
+
+.light-bg {
+  background: #f7f7f7;
+  color: #3d3d3d;
+  border: 1px solid #3d3d3d;
+}
+
+/* 左右带线标题 */
+
+.text-with-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.text-with-line::before {
+  content: '';
+  margin-right: 38rpx;
+  display: inline-block;
+  flex: 1;
+  height: 1px;
+  background: #f7f7f7;
+}
+
+.text-with-line::after {
+  content: '';
+  margin-left: 38rpx;
+  display: inline-block;
+  flex: 1;
+  height: 1px;
+  background: #f7f7f7;
+}
+
+/* 按钮组 */
+
+.button-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.button-container button {
+  flex: 1;
+  margin-right: 30rpx;
+}
+
+.button-container button:last-of-type {
+  margin-right: 0;
+}
+
+/*  加载更多   */
+
+.weui-loading {
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-animation: weuiLoading 1s steps(12, end) infinite;
+  animation: weuiLoading 1s steps(12, end) infinite;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=) no-repeat;
+  background-size: 100%;
+}
+
+.weui-loadmore {
+  width: 65%;
+  margin: 1.5em auto;
+  line-height: 1.6em;
+  font-size: 14px;
+  text-align: center;
+}
+
+.weui-loadmore__tips {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.load-complete {
+  padding: 20rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #a1a1a1;
+}
+
+.no-data {
+  text-align: center;
+  margin-top: 60rpx;
+  font-size: 28rpx;
+  color: #a1a1a1;
+}
+
+.protocol {
+  padding: 0 20rpx;
+}
+
+.protocol .title {
+  font-size: 48rpx;
+  text-align: center;
+  font-weight: bold;
+  margin: 40rpx auto;
+}
+
+.protocol .h1 {
+  font-size: 28rpx;
+  font-weight: bold;
+  text-indent: 56rpx;
+  margin-top: 20rpx;
+}
+
+.protocol .p {
+  font-size: 28rpx;
+  text-indent: 56rpx;
+}

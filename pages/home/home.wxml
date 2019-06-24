@@ -1,0 +1,90 @@
+<view class='map-view'>
+  <view>
+    <view class="search-block {{address?'search-left':'search-center'}}" catchtap='jumpChoiceAddress'>
+      <block wx:if='{{address}}'>
+        <icon type='search' size='14' style='margin-left:25rpx;'></icon>
+        <text class='add-dot'>{{address}}</text>
+        <icon type='clear' size='14' class='clear' catchtap='clearAddress'></icon>
+      </block>
+      <block wx:else>
+        <icon type='search' size='14'></icon>
+        <text>搜一搜</text>
+      </block>
+    </view>
+  </view>
+  <!-- 地图 -->
+  <map id='myMap' enable-3D enable-overlooking enable-rotate bindtap='clickMap' bindregionchange='removeCenterLocation' scale='{{scale}}' bindmarkertap='clickMark' markers="{{markers}}" longitude="{{longitude}}" latitude="{{latitude}}" show-location>
+    <!--活动指南-->
+    <cover-view class="activity-guide add-map-wrap-border" wx:if="{{activityData.title}}" catchtap='jumpActivityH5Page'>
+      <cover-view class="scroll-content">
+        <cover-view class='flex-center-center'>
+          <cover-image wx:if='{{activityData.image}}' src='{{activityData.image}}'></cover-image>
+          <cover-view class='add-dot tipNotice-text'>{{activityData.title}}</cover-view>
+        </cover-view>
+      </cover-view>
+      <cover-image src='/assets/imgs/arrow.png' class='tip-notice-arrow'></cover-image>
+    </cover-view>
+    <block>
+      <!-- 锚点 -->
+      <!-- <cover-image class="home-anchor" src='./img/anchor.png'></cover-image> -->
+      <!-- 定位 -->
+      <cover-image class='position' style='left:38rpx' catchtap='moveToLocation' src='./img/position.png'></cover-image>
+      <!-- 个人中心 -->
+      <cover-image class="position" bindtap='jumpUserCenter' style='right:38rpx' src='./img/user-center.png'></cover-image>
+      <!-- 扫码充电 -->
+      <cover-image class='scan' src='./img/scan.png' catchtap='scan'></cover-image>
+    </block>
+    <!-- 进行中订单 -->
+    <cover-image class="ordering" catchtap='handleOrder' animation="{{animationOrderData}}" src='./img/ordering-icon.png'></cover-image>
+    <!-- 详情 -->
+    <block>
+      <cover-view class='charge-detail' animation="{{animationData}}" bindtransitionend='transitionendSuccess'>
+        <!-- 上部 -->
+        <block>
+          <cover-view class='detail-up'>
+            <cover-view class='add-dot address'>{{chargeDetailData.stationName}}</cover-view>
+            <cover-view class='detail-up-right' bindtap='navigation'>
+              <cover-image src='/assets/imgs/navigation.png'></cover-image>
+              <cover-view class='distance'>{{chargeDetailData.distance}}</cover-view>
+            </cover-view>
+          </cover-view>
+        </block>
+        <!-- 中部 -->
+        <block>
+          <cover-view class='detail-center'>
+            <cover-view class='detail-center-item'>
+              <cover-view class='detail-center-item-wrap'>
+                <cover-view>闲置</cover-view>
+                <cover-view class='number'>{{chargeDetailData.availableFast}}</cover-view>
+                <cover-view>台</cover-view>
+              </cover-view>
+              <cover-view class='detail-center-item-wrap wrap-width'>快充电桩({{chargeDetailData.fastPileNum}}台)</cover-view>
+            </cover-view>
+            <cover-view class='detail-center-item'>
+              <cover-view class='detail-center-item-wrap'>
+                <cover-view>闲置</cover-view>
+                <cover-view class='number'>{{chargeDetailData.availableSlow}}</cover-view>
+                <cover-view>台</cover-view>
+              </cover-view>
+              <cover-view class='detail-center-item-wrap wrap-width'>慢充电桩({{chargeDetailData.slowPileNum}}台)</cover-view>
+            </cover-view>
+            <cover-view class='detail-center-item'>
+              <cover-view class='detail-center-item-wrap price'>
+                <cover-view wx:if='{{chargeDetailData.currentElecPrice}}'>当前</cover-view>
+                <cover-view class='price-number'>{{chargeDetailData.currentElecPrice||'未知'}}　</cover-view>
+              </cover-view>
+              <cover-view class='detail-center-item-wrap '>元/度　</cover-view>
+            </cover-view>
+          </cover-view>
+        </block>
+        <!-- 下部 -->
+        <block>
+          <cover-view class='detail-bottom'>
+            <cover-image src='./img/scan-small.png' bindtap='scan' class='scan-small-icon'></cover-image>
+            <cover-image src='./img/detail.png' class='detail-icon' bindtap='jumpDetailPage'></cover-image>
+          </cover-view>
+        </block>
+      </cover-view>
+    </block>
+  </map>
+</view>

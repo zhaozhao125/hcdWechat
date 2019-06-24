@@ -1,0 +1,26 @@
+@import './../wxss/publice.wxss';
+
+.login-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  box-shadow: 0 2px 4px 0 rgba(218, 218, 218, 0.50);
+  margin-bottom: 68rpx;
+}
+
+.login-input {
+  height: 88rpx;
+  width: 100%;
+  font-size: 34rpx;
+}
+
+image {
+  width: 90%;
+  height: 22%;
+}
+
+

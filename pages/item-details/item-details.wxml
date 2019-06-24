@@ -1,0 +1,44 @@
+<view class='detail-content'>
+  <!-- 上部 -->
+  <!-- <view>
+    <image src='./img/refresh.png' catchtap='refresh' class="refresh {{isRefresh?'start-refresh':''}}" mode='aspectFit'></image>
+  </view> -->
+  <view class="detail-item" wx:for="{{detailData}}" wx:for-index="idx" wx:for-item="itemData">
+    <view class='up'>
+    <view>
+    </view>
+    <image src='/assets/imgs/charge.png' mode='aspectFit'></image>
+    <view class='up-center add-dot'>
+      <view>
+        <text class="slow-fast">{{itemData.fast?'慢':'快'}}</text>
+        <text class="sn">{{itemData.sn}}</text>
+      </view>
+      <view class="connector">
+         <text wx-if="{{itemData.connectorName}}" class="connectorName">{{itemData.connectorName}}</text>
+      </view>
+      <text>{{itemData.stationName}}</text>
+    </view>
+    <view class='up-right'>
+      <text>{{itemData.statusText}}</text>
+      <image src='./img/refresh.png' catchtap='refresh' class="refresh {{isRefresh?'start-refresh':''}}" mode='aspectFit'></image>
+    </view>
+  </view>
+
+  <view class='type-item flex-center-between'>
+    <text>设备类型</text>
+    <text>{{itemData.equipmentType?itemData.equipmentType:'未知'}}</text>
+  </view>
+  <view class='type-item flex-center-between'>
+    <text>额定功率</text>
+    <text>{{itemData.power?itemData.power:'未知'}}</text>
+  </view>
+  <view class='type-item flex-center-between' style='border:none'>
+    <text>额定电流</text>
+    <text>{{itemData.current?itemData.current:'未知'}}</text>
+  </view>
+  <form bindsubmit="charge" report-submit>
+    <button form-type='submit' class="{{itemData.canStartCharge?'start-button button-bg':'refresh-button'}}">{{itemData.statusTip}}</button>
+  </form>
+  </view>
+  
+</view>

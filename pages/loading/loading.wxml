@@ -1,0 +1,11 @@
+<view class='container'>
+  <view class='progress_box'>
+    <!-- 绘制圆环背景 -->
+    <canvas class="progress_bg" canvas-id="canvasProgressbg" />
+    <!-- 绘制加载中圆弧 -->
+    <canvas class="progress_canvas" canvas-id="canvasProgress" />
+    <!-- 绘制圆弧中心提示文字 -->
+    <view class="progress_text"> {{time}}</view>
+  </view>
+  <view class='text-size'>设备自检中，请稍等...</view>
+</view>

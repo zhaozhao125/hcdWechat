@@ -1,0 +1,144 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.start-refresh {
+  animation: rotation 0.8s linear infinite;
+}
+
+.detail-content {
+  width: 100%;
+}
+
+.up {
+  width: 100%;
+  padding: 24rpx 40rpx;
+  border-top: 2rpx solid #e7e7e7;
+  border-bottom: 2rpx solid #e7e7e7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.up >image {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 4rpx;
+  margin-right: 20rpx;
+}
+
+.up-center {
+  width: 400rpx;
+  /* background: #787878; */
+}
+
+.up-center view {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10rpx;
+}
+.detail-item{
+  margin-bottom:60rpx;
+}
+.up-center .connector{
+  padding-bottom: 0rpx;
+}
+/* .up-center view text:first-child {
+  font-size: 25rpx;
+  color: #fff;
+  background-color: #3cbca3;
+  padding: 4rpx 8rpx;
+  border-radius: 4rpx;
+} */
+.up-center view .slow-fast{
+  font-size: 25rpx;
+  color: #fff;
+  background-color: #3cbca3;
+  padding: 4rpx 8rpx;
+  border-radius: 4rpx;
+}
+.up-center view .connectorName{
+  font-size: 28rpx;
+  color: #9b9b9b;
+}
+/* .up-center view text:last-child {
+  font-size: 36rpx;
+  color: #3d3d3d;
+  font-weight: bold;
+  margin-left: 10rpx;
+} */
+.up-center .sn {
+  font-size: 36rpx;
+  color: #3d3d3d;
+  font-weight: bold;
+  margin-left: 10rpx;
+}
+.up-center  >text {
+  font-size: 28rpx;
+  color: #9b9b9b;
+}
+
+.up-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.up-right text {
+  border: 1rpx solid #f58223;
+  border-radius: 4px;
+  font-size: 20rpx;
+  color: #f58223;
+  padding: 4rpx 8rpx;
+  margin-bottom: 20rpx;
+}
+
+.up-right image {
+  width: 50rpx;
+  height: 50rpx;
+  align-self: flex-end;
+}
+
+.type-item {
+  width: 670rpx;
+  margin: 0 auto;
+  border-bottom: 2rpx solid #e7e7e7;
+}
+
+.type-item text {
+  padding: 20rpx 0;
+  font-size: 26rpx;
+  color: #3d3d3d;
+}
+
+button {
+  box-shadow: 0 0 9rpx #dfdfdf;
+  font-size: 34rpx;
+  height: 98rpx;
+  line-height: 98rpx;
+  color: #fff;
+  margin-top: 60rpx;
+}
+
+.refresh-button:active {
+  color: #fff;
+}
+
+.start-button:active {
+  color: #fff;
+}
+
+.refresh-button {
+  background-color: #d8d8d8;
+}
+
+.start-button {
+  border-radius: 200rpx;
+}

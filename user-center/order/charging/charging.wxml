@@ -1,0 +1,53 @@
+<wxs src="../../filters/filter.wxs" module="filter" />
+<view class='charging-content'>
+  <!-- 充电动画 -->
+  <block>
+    <view class='charging-animation'>
+      <image src='./img/charging.png' mode='aspectFit'></image>
+      <view>
+        <text>充电量</text>
+        <text>{{chargingData.totalPower}}</text>
+        <text>度/kw.h</text>
+      </view>
+    </view>
+  </block>
+  <!-- 电压 -->
+  <block>
+    <view class='voltage-content'>
+      <view>
+        <text>{{chargingData.currentA}}</text>
+        <text>流量(安/A)</text>
+      </view>
+      <view>
+        <text>{{chargingData.voltageA}}</text>
+        <text>电压(安/A)</text>
+      </view>
+    </view>
+  </block>
+  <!-- 详情 -->
+  <block>
+    <view class='detail'>
+      <view>
+        <text>订单计费</text>
+        <text>{{filter.moneyFilter(chargingData.totalMoney)}}元</text>
+      </view>
+      <view>
+        <text>电费</text>
+        <text>{{filter.moneyFilter(chargingData.elecMoney)}}元</text>
+      </view>
+      <view>
+        <text>服务费</text>
+        <text>{{filter.moneyFilter(chargingData.serviceMoney)}}元</text>
+      </view>
+      <view>
+        <text>站位费</text>
+        <text>{{filter.moneyFilter(chargingData.parkingMoney)}}元</text>
+      </view>
+      <view>
+        <text>充电时长</text>
+        <text>{{chargingTime}}</text>
+      </view>
+    </view>
+  </block>
+  <button class='button-bg' catchtap='handleFinishCharging'>结束充电</button>
+</view>

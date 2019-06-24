@@ -1,0 +1,158 @@
+@import "./../../public-wxss/order.wxss";
+
+.pay-bottom {
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100rpx;
+  width: 100%;
+  border-top: 2rpx solid #e7e7e7;
+}
+
+.left-view {
+  padding-left: 26rpx;
+}
+
+.left-view text:first-child {
+  font-size: 24rpx;
+  color: #3d3d3d;
+  margin-right: 10rpx;
+}
+
+.left-view text.need-pay {
+  text-align: end;
+  font-size: 55rpx;
+  font-weight: bold;
+  position: relative;
+  padding-right: 16rpx;
+}
+
+.left-view text.need-pay::before {
+  content: '¥';
+  font-size: 24rpx;
+  color: #3d3d3d;
+  font-weight: normal;
+}
+
+.left-view text.line::after {
+  content: '';
+  position: absolute;
+  top: 32rpx;
+  right: 0;
+  margin: auto;
+  height: 28rpx;
+  width: 2rpx;
+  background: #e7e7e7;
+}
+
+.left-view text.discount-amount {
+  font-size: 24rpx;
+  color: #9b9b9b;
+  padding-left: 16rpx;
+}
+
+.text-button {
+  width: 280rpx;
+  height: 102rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+
+.pay-detail {
+  width: 100%;
+  margin-top: 40rpx;
+}
+
+.pay-detail view {
+  line-height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pay-detail view text {
+  font-size: 28rpx;
+  color: #262626;
+}
+
+.pay-detail view text:first-child {
+  color: #9b9b9b;
+}
+
+.coupon {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20rpx;
+  /* background: #787878; */
+  padding: 20rpx 0;
+  border-top: 2rpx solid #e7e7e7;
+  border-bottom: 2rpx solid #e7e7e7;
+}
+
+.coupon >text {
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  color: #d8d8d8;
+  align-self: flex-start;
+}
+
+.coupon view {
+  line-height: 40rpx;
+}
+
+.coupon .coupon-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.coupon-top {
+  width: 100%;
+}
+
+.coupon-top  >text {
+  font-size: 24rpx;
+  color: #9b9b9b;
+}
+
+.coupon-top view {
+  display: flex;
+  align-items: center;
+}
+
+.coupon-top view text {
+  font-size: 24rpx;
+  max-width: 350rpx;
+   color: #262626;
+}
+
+
+.coupon-top view image {
+  width: 25rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
+}
+
+.pay-money {
+  width: 100%;
+  line-height: 85rpx;
+}
+
+.pay-money >image {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.pay-money view>image {
+  width: 34rpx;
+  height: 30rpx;
+}
+
+.pay-money view text {
+  font-size: 24rpx;
+  color: #3d3d3d;
+  margin-left: 16rpx;
+}

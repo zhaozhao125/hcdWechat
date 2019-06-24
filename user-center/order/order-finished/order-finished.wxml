@@ -1,0 +1,61 @@
+<wxs src="../../filters/filter.wxs" module="filter" />
+<view class='order'>
+  <view class='money'>
+    <text>已支付</text>
+    <text>{{filter.moneyFilter(orderData.actualPay)}}</text>
+  </view>
+  <text class='name'> {{orderData.stationName||'-'}}</text>
+  <!-- 详情 -->
+  <block>
+    <view class='detail'>
+      <view>
+        <text>电费</text>
+        <text>{{filter.moneyFilter(orderData.totalElecMoney)}}元</text>
+      </view>
+      <view>
+        <text>服务费</text>
+        <text>{{filter.moneyFilter(orderData.totalServiceMoney)}}元</text>
+      </view>
+      <view>
+        <text>站位费</text>
+        <text>{{filter.moneyFilter(orderData.parkingMoney)}}元</text>
+      </view>
+      <view>
+        <text>优惠券</text>
+        <text>{{orderData.discountAmount?orderData.discountAmount+'元':'无'}}</text>
+      </view>
+    </view>
+    <view class='detail'>
+      <view>
+        <text>充电量</text>
+        <text>{{orderData.totalPower}}度</text>
+      </view>
+      <view>
+        <text>充电时长</text>
+        <text>{{chargingTime}}</text>
+      </view>
+      <view>
+        <text>开始时间</text>
+        <text>{{filter.timeFilter(orderData.startTime, 'MM月dd日 hh:mm:ss')}}元</text>
+      </view>
+      <view>
+        <text>结束时间</text>
+        <text>{{filter.timeFilter(orderData.endTime, 'MM月dd日 hh:mm:ss')}}元</text>
+      </view>
+      <view>
+        <text>充电桩编号</text>
+        <text>{{orderData.operatorConnectorId}}</text>
+      </view>
+      <view>
+        <text>结束原因</text>
+        <text>{{orderData.stopReason}}</text>
+      </view>
+    </view>
+    <view class='detail' style='border:none'>
+      <view>
+        <text>支付方式</text>
+        <text>{{orderData.payWay}}</text>
+      </view>
+    </view>
+  </block>
+</view>

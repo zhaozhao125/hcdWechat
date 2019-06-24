@@ -1,0 +1,21 @@
+<wxs src="../filters/filter.wxs" module="filter" />
+<view class="wallet-detail">
+  <view class="detail-item {{index===listData.length-1?'':'border-bottom'}}" wx:for="{{listData}}" wx:key="{{index}}">
+    <view class="item-left">
+      <view class="item-name">{{item.actionCodeText}}</view>
+      <view class="item-date">{{item.createdOn}}</view>
+    </view>
+    <view class="item-right {{item.actionIncDecType}}">
+      <text>{{item.actionIncDecType=='INC'?'+':''}}</text>
+      <text>{{filter.moneyFilter(item.amount)}}元</text>
+    </view>
+  </view>
+  <view class="flex-column-center-center" wx:if="{{noData}}">
+    <image src='./img/no-data.png' class='no-data-image' mode='aspectFit'></image>
+    <text class='no-data-text'>暂无钱包明细</text>
+  </view>
+  <view class="weui-loadmore" hidden="{{loadComplete || !loading}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+</view>

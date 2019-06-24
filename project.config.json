@@ -1,0 +1,162 @@
+﻿{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true,
+		"uglifyFileName": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wx5012c70bcb283d68",
+	"projectname": "%E5%92%8C%E5%85%85%E7%94%B5",
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 17,
+			"list": [
+				{
+					"id": -1,
+					"name": "搜一搜",
+					"pathName": "pages/search/search",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "loading",
+					"pathName": "pages/loading/loading",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "充电站详情",
+					"pathName": "pages/charge-details/charge-details",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录页",
+					"pathName": "login/tel/tel",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "充电桩详情",
+					"pathName": "pages/item-details/item-details",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "验证码",
+					"pathName": "login/get-code/get-code",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "个人中心",
+					"pathName": "user-center/index/index",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "钱包明细",
+					"pathName": "user-center/wallet-detail/wallet-detail",
+					"query": ""
+				},
+				{
+					"id": 9,
+					"name": "我的钱包||充值",
+					"pathName": "user-center/recharge/recharge",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "我的订单",
+					"pathName": "user-center/order/order-list/order-list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "已完成订单",
+					"pathName": "user-center/order/order-finished/order-finished",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "验证码",
+					"pathName": "login/get-code/get-code",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "用户协议",
+					"pathName": "user-center/protocol/protocol",
+					"query": "orderSn=123"
+				},
+				{
+					"id": 18,
+					"name": "充值协议",
+					"pathName": "user-center/recharge/recharge-protocol/recharge-protocol",
+					"query": "orderSn=123"
+				},
+				{
+					"id": -1,
+					"name": "充电中",
+					"pathName": "user-center/order/charging/charging",
+					"query": ""
+				},
+				{
+					"id": 15,
+					"name": "电费时段详情",
+					"pathName": "pages/price-details/price-details",
+					"query": "priceInfo=[{startTime: \"00:00\", endTime: \"24:00\", elecPrice: 1.5, servicePrice: 0.5}]"
+				},
+				{
+					"id": 16,
+					"name": "待支付优惠券",
+					"pathName": "user-center/coupon/coupon",
+					"query": "pageSource=paying&orderSn=201811061632475985"
+				},
+				{
+					"id": 17,
+					"name": "待支付",
+					"pathName": "user-center/order/paying/paying",
+					"query": "orderSn=201811091545210767"
+				},
+				{
+					"id": 18,
+					"name": "个人中心优惠券",
+					"pathName": "user-center/coupon/coupon",
+					"query": "pageSource=userCenter"
+				}
+			]
+		}
+	}
+}

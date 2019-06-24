@@ -1,0 +1,26 @@
+<view class='search-content'>
+  <view>
+    <icon type="search" size="14" />
+    <input bindinput='inputAddressName' focus value='{{inputAddress}}' placeholder='请输入目的地' placeholder-class='placeholder-class'></input>
+  </view>
+  <text catchtap='cancel'>取消</text>
+</view>
+
+<view class='history-content'>
+  <!-- 历史记录 -->
+  <block wx:if='{{pois.length}}'>
+    <view class="history-item {{index==0?'':'add-border'}}" bindtap='choiceAddress' wx:for-index="index" wx:for="{{pois}}" wx:key='pois.id' wx:for-item="item" data-info="{{item}}">
+      <view>
+        <view catchtap='navigation' data-info="{{item}}">
+          <image src='./img/location.png'></image>
+        </view>
+        <view>
+          <text class='add-dot'>{{item.name}}</text>
+          <text class='add-dot'>{{item.address}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+  <text wx:elif="{{inputAddress&&isRequest}}" class='no-data'>未找到搜索结果~</text>
+  <text wx:elif="{{!inputAddress}}" class='no-data'>无历史搜索记录~</text>
+</view>

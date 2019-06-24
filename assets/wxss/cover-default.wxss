@@ -1,0 +1,70 @@
+/* 覆盖默认样式 */
+
+page {
+
+
+  box-sizing: border-box;
+  font-family: PingFangSC-Regular;
+  color: #3D3D3D;
+  
+}
+
+view,
+text,
+image {
+  box-sizing: border-box;
+}
+
+image {
+  width: 100%;
+}
+
+button::after {
+  border: 0;
+  display: none;
+}
+
+button {
+  width: 90%;
+  border-radius: 5px;
+}
+
+button[type=default] {
+  background: #F9F9F9;
+  border: 1px solid #979797;
+}
+
+button[type=primary] {
+  background-color: #eec31b;
+  color: #040000;
+  font-size: 36rpx;
+}
+button.button-hover[type=primary] {
+  color: #040000;
+  background-color: #caa719;
+}
+
+button[type=white] {
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+}
+
+button[type=gray] {
+  background: #dfdfdf;
+  color: #040000;
+  box-shadow: 0 0 6rpx #dfdfdf;
+}
+
+button[disabled][type=primary] {
+  background: #D8D8D8;
+  color: #fff;
+  border-color: #D8D8D8;
+}
+
+button.fixed-bottom {
+  position: fixed;
+  bottom: 30rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+}

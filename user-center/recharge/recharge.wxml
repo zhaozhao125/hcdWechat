@@ -1,0 +1,30 @@
+<view class='recharge'>
+  <view class='up'>
+    <view class='balance flex-center-between'>
+      <text>账户余额：{{userMoney}}元</text>
+      <text catchtap='goToWalletDetail'>钱包明细</text>
+    </view>
+    <view class='blank'></view>
+    <text class='recharge-money'>充值金额</text>
+    <view class="recharge-list" wx:if='{{rechargeList.length}}'>
+      <view class="{{'recharge-item'+(index==currentIndex?' active':'')}}" wx:for="{{rechargeList}}" wx:key="{{index}}" bind:tap="handleSelectMoney" data-index="{{index}}">
+        <text>{{item.stepAmount}}元</text>
+        <text class="{{index==currentIndex?'active-explain':'explain'}}" wx:if='{{item.content}}'>{{item.content}}</text>
+      </view>
+      <view class="{{'recharge-item other-money'+(99==currentIndex?' active':'')}}">
+        <input type="digit" value="{{userInput}}" placeholder="其他金额" maxlength="8" bindfocus="handleInputFocus" bindblur="handleInputBlur" />
+      </view>
+    </view>
+    <view class="weui-loadmore" wx:else>
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips" style='color:#9b9b9b;'>加载中...</view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <button bind:tap="handleRecharge" class='button-bg'>立即充值</button>
+    <view class="protocol flex-center-center">
+      点击“立即充值”即代表您已阅读并同意《
+      <navigator url="/user-center/recharge/recharge-protocol/recharge-protocol" style='color: #00C6CA;'>和充电充值协议</navigator>》
+    </view>
+  </view>
+</view>

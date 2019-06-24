@@ -1,0 +1,9 @@
+
+<view class='login-page'>
+  <text class='top-tip'>欢迎使用和充电</text>
+  <view class='login-content'>
+    <input class='login-input' value='{{inputValue}}' maxlength='11' bindinput='getTel' placeholder-class='placeholder' placeholder="请输入手机号" type='number' focus='{{inputFocus}}' />
+    <icon wx:if='{{inputValue}}' bindtap='clearInput' type="clear" size="15" color='background: #888888' />
+  </view>
+  <button bindtap='nextStep' class="botton_class botton_noborder' {{telOk?'button-bg':''}}">下一步</button>
+</view>

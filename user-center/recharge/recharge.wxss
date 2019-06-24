@@ -1,0 +1,113 @@
+.recharge {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.up {
+  flex: 1;
+}
+
+.balance {
+  height: 120rpx;
+  padding: 0 36rpx;
+}
+
+.balance text:first-child {
+  font-size: 36rpx;
+  color: #262626;
+  font-weight: bold;
+}
+
+.balance text:last-child {
+  font-size: 28rpx;
+  color: #9b9b9b;
+  border: 2rpx solid #d8d8d8;
+  padding: 4rpx 8rpx;
+  border-radius: 8rpx;
+}
+
+.bottom button {
+  border-radius: 200rpx;
+  color: #fff;
+  margin-bottom: 20rpx;
+  width: 678rpx;
+}
+
+.protocol {
+  font-size: 20rpx;
+  color: #a1a1a1;
+  margin-bottom: 36rpx;
+}
+
+.recharge-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 0 20rpx;
+}
+
+.blank {
+  height: 20rpx;
+  width: 100%;
+  background: #f9f9f9;
+}
+
+.recharge-money {
+  font-size: 36rpx;
+  color: #262626;
+  height: 120rpx;
+  display: flex;
+  background: #fff;
+  line-height: 120rpx;
+  padding-left: 36rpx;
+  font-weight: bold;
+}
+
+.recharge-item {
+  width: 48%;
+  height: 120rpx;
+  font-size: 36rpx;
+  background: #f9f9f9;
+  border-radius: 8rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #262626;
+}
+
+.explain {
+  font-size: 20rpx;
+  color: #9b9b9b;
+}
+
+.recharge-item .active-explain {
+  color: #fff;
+  font-size: 20rpx;
+}
+
+.recharge-item.active {
+  background-image: linear-gradient(-270deg, #1cdf98 0%, #00c6ca 100%);
+  color: #fff;
+}
+
+.other-money input {
+  height: 120rpx;
+}
+
+.activeExplain {
+  color: #fff;
+}
+
+.input-placeholder {
+  color: #2e2e2e;
+  font: 36rpx sans-serif;
+  line-height: 120rpx;
+}

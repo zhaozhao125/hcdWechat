@@ -1,0 +1,42 @@
+page {
+  width: 100%;
+  border-top: 1px solid #dfdfdf;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx;
+  width: 710rpx;
+  margin: 0 auto;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.detail-item:last-of-type {
+  border: 0;
+}
+
+.item-name {
+  font-size: 36rpx;
+  color: #3d3d3d;
+}
+
+.item-date {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.item-right {
+  font-size: 26rrpx;
+  font-weight: bold;
+}
+
+.DEC {
+  color: #00c6ca;
+}

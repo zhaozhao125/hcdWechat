@@ -1,0 +1,27 @@
+@import "./../../public-wxss/order.wxss";
+
+
+.detail {
+  margin-top: 34rpx;
+  border-bottom: 2rpx solid rgba(231, 231, 231, 0.5);
+  /* padding: 66rpx 111rpx 90rpx 111rpx; */
+  width: 550rpx;
+  padding-bottom: 20rpx;
+}
+
+.detail>view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 55rpx;
+}
+
+.detail>view text {
+  font-size: 24rpx;
+  color: #9b9b9b;
+}
+
+.detail>view text:last-child {
+  font-size: 24rpx;
+  color: #262626;
+}

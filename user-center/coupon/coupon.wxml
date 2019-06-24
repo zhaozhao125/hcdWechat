@@ -1,0 +1,57 @@
+<view class='coupon-content'>
+  <block wx:if="{{pageSource=='userCenter'}}">
+    <view class='coupon-type fixed'>
+      <text catchtap='choiseTabCoupon' class="{{index===userCouponStatus?'choise-type':''}}" data-index='{{index}}' wx:for='{{typeArr}}' wx:key='index' wx:for-item='item'>{{item}}</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='is-use-coupon flex-center-between fixed'>
+      <text class='is-use-coupon-text-1'>暂不使用优惠券</text>
+      <image bindtap='useCoupon' wx:if='{{noUseCoupon}}' src='./img/selected-1.png' mode='aspectFit'></image>
+      <!-- 圆 -->
+      <text bindtap='useCoupon' wx:else class='is-use-coupon-text-2'></text>
+    </view>
+  </block>
+  <view class='coupon-block'>
+    <!-- 个人中心优惠券-->
+    <block wx:if="{{pageSource=='userCenter'}}">
+      <view class='coupon-item' wx:for="{{couponData}}" wx:key='index' wx:for-item='item'>
+        <view class="up type-bg-{{userCouponStatus}}">
+          <text class="left {{item.type===1?'yuan':'zhe'}}">{{item.type===1?item.money:item.discount}}</text>
+          <view class='right'>
+            <text class='name add-dot'>{{item.couponsName}}</text>
+            <text class='time add-dot'>{{item.beginDate}}至{{item.expireDate}}</text>
+            <text class='explain add-dot' wx:if='{{item.type===1&&item.useMoneyCondition>0}}'>满{{item.useMoneyCondition}}元可用</text>
+            <text class='explain add-dot' wx:if='{{item.type===2&&item.useMoneyTop>0}}'>最高可抵{{item.useMoneyTop}}元</text>
+          </view>
+        </view>
+        <view class='bottom'>{{item.detail}}</view>
+      </view>
+    </block>
+    <!-- 待支付选择优惠券 -->
+    <block wx:if="{{pageSource=='paying'}}">
+      <view class='coupon-item' wx:for="{{couponData}}" wx:key='index' wx:for-item='item' catchtap='choisePayingCoupon' data-item='{{item}}'>
+        <view class="up type-bg-{{item.canUse?0:1}}">
+          <text class="left {{item.unit==='元'?'yuan':'zhe'}}">{{item.discount}}</text>
+          <view class="right {{currentCouponIndex==item.userCouponId?'right-width':''}}">
+            <text class='name add-dot'>{{item.couponsName}}</text>
+            <text class='time add-dot'>{{item.beginDate}}至{{item.expireDate}}</text>
+            <text class='explain add-dot'>{{item.discountDesc}}</text>
+          </view>
+          <image src='./img/selected-2.png' mode='aspectFit' wx:if='{{currentCouponIndex==item.userCouponId}}'></image>
+        </view>
+        <view class='bottom'>{{item.detail}}</view>
+      </view>
+    </block>
+    <view class="weui-loadmore" hidden="{{!loading}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+  </view>
+
+  <!-- 暂无数据 -->
+  <view class='no-data' wx:if='{{isShowNoData}}'>
+    <image src='./img/no-coupon.png' class='no-data-image' mode='aspectFit'></image>
+    <text class='no-data-text'>暂无{{typeArr[userCouponStatus]}}优惠券~</text>
+  </view>
+</view>

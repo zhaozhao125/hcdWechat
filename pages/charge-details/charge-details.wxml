@@ -1,0 +1,70 @@
+<wxs src="./../../utils/tools.wxs" module="tools" />
+<!-- 轮播图 -->
+<swiper indicator-dots="{{indicatorDots}}" indicator-color='#FFFFFF' indicator-active-color='#00C6CA' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="index" wx:for-item="item">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150" />
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<view class='detail-top'>
+  <view class='detail-top-left '>
+    <text class='add-dot'>{{detailData.stationName||'未知'}}</text>
+    <view>
+      <text>{{detailData.operatorName}}</text>
+      <text>{{detailData.stationTypeName}}</text>
+      <text wx:if='{{detailData.openTime}}'>{{detailData.openTime}}</text>
+    </view>
+    <text class='add-dot' wx:if='{{detailData.address}}'>{{detailData.address}}</text>
+  </view>
+  <view class='detail-top-right' catchtap='navigation'>
+    <image src='./img/navigation.png' mode='aspectFit'></image>
+    <text>{{detailData.distance||'未知'}}</text>
+  </view>
+</view>
+<!-- 下部详情 -->
+<block>
+  <view class='detail-bottom'>
+    <block wx:if='{{detailData.prices.length>0}}' wx:for='{{detailData.prices}}' wx:for-item='item' wx:key='index'>
+      <view class='item' wx:if='{{item.currentPeriod}}'>
+        <view>
+          <text>当前时段</text>
+          <text>{{item.startTime}}-{{item.endTime}}</text>
+        </view>
+        <view>
+          <text>价格</text>
+          <text class='money' wx:if="{{item.currentPeriod}}">{{tools.toFixed(item.elecPrice+item.servicePrice)}}</text>
+        </view>
+        <view>
+          <text>电价详情</text>
+          <text>电费 {{tools.toFixed(item.elecPrice)}} 元/度 + 服务费 {{tools.toFixed(item.servicePrice)}} 元/度 </text>
+        </view>
+        <text class='look-more button-bg' catchtap='lookMore' data-priceInfo='{{detailData.prices}}'>查看更多</text>
+      </view>
+    </block>
+
+    <view class='item'>
+      <view>
+        <text>站位费</text>
+        <text>{{detailData.parkingPrice?detailData.parkingPrice+'元/小时':'未知'}}</text>
+      </view>
+    </view>
+    <view class='item'>
+      <view>
+        <text>联系电话</text>
+        <text>{{detailData.telephone}}</text>
+      </view>
+      <image src='/assets/imgs/phone-icon.png' catchtap='service' data-telephone='{{detailData.telephone}}' mode='aspectFit'></image>
+    </view>
+    <view class='item'>
+      <view>
+        <text>网点介绍</text>
+        <text>{{detailData.stationIntro?detailData.stationIntro:'暂无'}}</text>
+      </view>
+    </view>
+
+  </view>
+
+</block>

@@ -1,0 +1,48 @@
+.order {
+  height: 100%;
+  width: 100%;
+  border-top: 2rpx solid rgba(231, 231, 231, 0.5);
+  padding: 0 110rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.money {
+  margin-top: 60rpx;
+}
+
+.money text:first-child {
+  font-size: 28rpx;
+  color: #7f7f7f;
+}
+
+.money text:last-child {
+  font-size: 128rpx;
+  color: #3d3d3d;
+  font-weight: bold;
+}
+
+.money text:last-child::after {
+  content: '元';
+  font-size: 28rpx;
+  color: #7f7f7f;
+  font-weight: normal;
+}
+
+.name {
+  font-size: 28rpx;
+  color: #3d3d3d;
+  display: flex;
+  align-items: center;
+  padding-top: 20rpx;
+}
+
+.name::before, .name::after {
+  content: '';
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background: #00c6ca;
+  margin: 0 20rpx;
+}

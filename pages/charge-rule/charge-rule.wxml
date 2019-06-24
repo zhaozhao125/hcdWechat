@@ -1,0 +1,24 @@
+<view class="charge-rule" wx:if="{{currentData}}">
+  <swiper indicator-dots="{{priceList && priceList.length>1}}" circular bindchange='handleChange'>
+    <swiper-item wx:for="{{priceList}}" wx:key="{{index}}">
+      <image src='{{item.carGenreImg}}' class='car-image' mode='aspectFit'></image>
+      <view class='type-tip'>
+        <text>{{currentData.carGenreName}}</text>
+        <text>{{currentData.carSeat}}座</text>
+      </view>
+    </swiper-item>
+  </swiper>
+  <block>
+    <view class='charge-content'>
+      <view wx:for="{{currentData.carBillingRule}}" wx:key="{{index}}" class='charge-detail detail-1'>
+        <text>{{item.title}}</text>
+        <text>{{item.explain}}</text>
+      </view>
+    </view>
+    <view class="bottom-tip">
+      <text wx:for="{{currentData.notice}}" wx:key="index">
+        {{item}}
+      </text>
+    </view>
+  </block>
+</view>

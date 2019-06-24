@@ -1,0 +1,12 @@
+<wxs src="./../../utils/tools.wxs" module="tools" />
+<view class='price-dtatils'>
+  <view class='item' wx:for='{{priceInfo}}' wx:key='index' wx:for-item='item'>
+    <text>{{index+1}}</text>
+    <view class='item-view'>
+      <text>{{item.startTime}}-{{item.endTime}}</text>
+      <text>{{tools.toFixed(item.elecPrice+item.servicePrice)}}</text>
+      <text>电费 {{tools.toFixed(item.elecPrice)}} 元/度 + 服务费 {{tools.toFixed(item.servicePrice)}} 元/度 </text>
+    </view>
+    <image src='./img/current.png' mode='aspectFit' wx:if='{{item.currentPeriod}}'></image>
+  </view>
+</view>

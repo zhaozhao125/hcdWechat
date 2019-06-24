@@ -1,0 +1,6 @@
+module.exports.moneyFilter = function(param) {
+  if(isNaN(param)){
+    return '-'
+  }
+  return param.toFixed(2)
+}

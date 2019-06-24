@@ -1,0 +1,188 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+image, text {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+image {
+  width: 240rpx;
+  height: 240rpx;
+  top: 158rpx;
+}
+
+.time {
+  width: 40rpx;
+  height: 40rpx;
+  top: 250rpx;
+  color: #979797;
+}
+
+.tip {
+  text-align: center;
+  top: 463rpx;
+  color: #979797;
+  font-size: 30rpx;
+}
+
+image {
+  animation: rotation 1s linear infinite;
+}
+
+.circle {
+  height: 100px;
+  border: 10px solid;
+  border-color: #787878;
+  border-radius: 50%;
+  /* animation: rotation2 10s linear infinite; */
+}
+
+.circleProgress_wrapper {
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+  position: relative;
+  background-color: #f0f0f0;
+}
+
+.wrapper {
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+.right {
+  right: 0;
+  /* background: #787878; */
+}
+
+.left {
+  left: 0;
+}
+
+.circleProgress {
+  width: 200px;
+  height: 200px;
+  border: 20px solid;
+  /* border-top: 20px solid #00C6CA;
+    border-right: 20px solid #00C6CA; */
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  /* transform: rotate(45deg); */
+}
+
+.add-bg-color {
+  color: #00c6ca;
+}
+
+.rightcircle {
+  /* border-top: 20px solid red;
+  border-right: 20px solid green; */
+  right: 0;
+  /* animation-name: circleProgressLoad_right;
+  animation-duration: 20s;
+  animation-fill-mode: forwards; *//*    animation-iteration-count: 1;定义循环资料，infinite为无限次 *//* left: 0; *//* animation: circleProgressLoad_right 5s linear 1; */
+  animation-fill-mode: forwards;
+}
+
+.leftcircle {
+  left: 0;
+  border: 20px solid #fff;
+  animation: circleProgressLoad_left 5s linear 1;
+  /* animation-delay: 4.99999s; */
+  animation-fill-mode: forwards;
+}
+
+@keyframes circleProgressLoad_right {
+  0% {
+    border-top: 20px solid #fff;
+    border-right: 20px solid #fff;
+    transform: rotate(45deg);
+  }
+
+  100% {
+    /*      border-left: 20px solid green; *//*      border-bottom: 20px solid green; *//*      border-left: 20px solid #ED1A1A; *//*      border-bottom: 20px solid green; */
+    border-top: 20px solid #fff;
+    border-right: 20px solid #fff;
+    transform: rotate(225deg);
+  }
+}
+
+@keyframes circleProgressLoad_left {
+  0% {
+    border-top: 20px solid #00c6ca;
+    border-left: 20px solid #00c6ca;
+    transform: rotate(135deg);
+  }
+
+  100% {
+    border-top: 20px solid #00c6ca;
+    border-left: 20px solid #00c6ca;
+    transform: rotate(315deg);
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress_box {
+  margin-top: 150rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.progress_bg {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+}
+
+.progress_canvas {
+  width: 220px;
+  height: 220px;
+}
+
+.progress_text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 74rpx;
+  padding-left: 16rpx;
+  color: #00c6ca;
+  font-weight: bold;
+}
+
+.progress_text::after {
+  content: '秒';
+  font-size: 42rpx;
+  color: #b4eee6;
+  font-weight: normal;
+}
+
+.text-size {
+  font-size: 36rpx;
+  color: #262626;
+  margin-top: 50rpx;
+}
